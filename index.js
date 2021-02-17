@@ -275,10 +275,20 @@ Using the vowelCounter function below do the following:
   HINT - you may need to study tomorrow's content on arrays 
   HINT - try looking up the .includes() method
 */
+let vowels = ["a", "e", "i", "o", "u"];
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function vowelCounter(word) {
+  let vowelCounter = 0;
+  for (i = 0; i <= word.length; i++) {
+    let letter = word[i];
+      if (vowels.includes(letter)) {
+        vowelCounter++;
+      }
+  } 
+  return vowelCounter;
 }
+
+vowelCounter("hello");
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
 function foo() {
