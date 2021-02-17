@@ -20,8 +20,8 @@ Do the following:
 
 var votingAge = 23;
 
-if (votingAge > 18) {
-  console.log(true)
+if (votingAge >= 18) {
+  console.log(true);
 }
 
 /*
@@ -38,9 +38,9 @@ Do the following:
 var num1 = 2;
 var num2 = 4;
 
-if (num2 = 4) {
+if (num2 === 4) {
   let num1 = num2;
-  console.log(num1)
+  console.log(num1);
 }
 
 /*
@@ -54,8 +54,8 @@ Do the following:
    HINT: look up the Number method
 */
 
-var year = "1999"
-console.log(Number(year))
+var year = "1999";
+console.log(Number(year));
 
 /*
 Task 1d - Multiply
@@ -70,7 +70,7 @@ function multiply(a, b) {
   return a * b;
 }
 
-multiply(4,5);
+multiply(4, 5);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -113,37 +113,35 @@ Use the hungryDog function and feeding requirements below to do the following:
      7 - 12 months 4% of their body weight
     
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
-*/  
+*/
 
 function hungryDog(weight, age) {
-  if (age >= 1 && weight <= 5){
-    return weight * 0.05;
+  if (age >= 1) {
+    if (weight <= 5) {
+      return weight * 0.05;
+    } else if (weight <= 10) {
+      return weight * 0.04;
+    } else if (weight <= 15) {
+      return weight * 0.03;
+    } else {
+      return weight * 0.02;
+    }
+  } else {
+    if (age >= 2 / 12 && age <= 4 / 12) {
+      return weight * 0.1;
+    } else if (age > 4 / 12 && age <= 7 / 12) {
+      return weight * 0.05;
+    } else if (age > 7 / 12 && age < 1) {
+      return weight * 0.04;
+    }
   }
-  else if (age >= 1 && weight > 5 && weight <= 10) {
-    return weight * 0.04;
-  }
-  else if (age >= 1 && weight > 10 && weight <= 15) {
-    return weight * 0.03;
-  }
-  else if (age >= 1 && weight > 15) {
-    return weight * 0.02;
-  }
-  else if (age >= 2/12 && age <= 4/12) {
-    return weight * 0.1;
-  }
-  else if (age > 4/12 && age <= 7/12) {
-    return weight * 0.05;
-  }
-  else if (age > 7/12 && age < 1) {
-    return weight * 0.04;
-  }
-  }
+}
 
-hungryDog(15,1);
+hungryDog(15, 1);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
-// Rock, Paper, Scissors - Let's play against the computer!
+// rock, paper, scissors - Let's play against the computer!
 /*
 Create a global variable that randomly generates the computer's choice
 Use Math.random to determine the computers choice (Math.random gives a random number between 0 and 1)
@@ -157,71 +155,51 @@ Use the game function below to do the following:
    - lose should return "you lose!"
    - tie should return "it's a tie"
   
-  RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
+  RULES OF THE GAME: scissors beats paper | paper beats rock | rock beats scissors | Or there's a tie
   
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-let user = Math.random();
-
-if (user <= 0.33) {
-  let user = "Rock";
-}
-else if (user >= 0.33 && user <= 0.66) {
-  let user = "Paper";
-}
-else {
-  let user = "Scissors";
-}
-
 let computer = Math.random();
 
 if (computer <= 0.33) {
-  let computer = "Rock";
-}
-else if (computer >= 0.33 && computer <= 0.66) {
-  let computer = "Paper";
-}
-else {
-  let computer = "Scissors";
+  let computer = "rock";
+} else if (computer >= 0.33 && computer <= 0.66) {
+  let computer = "paper";
+} else {
+  let computer = "scissors";
 }
 
-function game(user, computer){
-  if (user === "Rock" && computer === "Scissors") {
-    return "you win!"
-  }
-  else if (user === "Paper" && computer === "Rock") {
-    return "you win!"
-  }
-  else if (user === "Scissors" && computer === "Paper") {
-    return "you win!"
-  }
-  else if (user === "Rock" && computer === "Paper") {
-    return "you lose!"
-  }
-  else if (user === "Paper" && computer === "Scissors") {
-    return "you lose!"
-  }
-  else if (user === "Scissors" && computer === "Rock") {
-    return "you lose!"
-  }
-  else {
-    return "it's a tie"
+function game(user, computer) {
+  if (user === "rock" && computer === "scissors") {
+    return "you win!";
+  } else if (user === "paper" && computer === "rock") {
+    return "you win!";
+  } else if (user === "scissors" && computer === "paper") {
+    return "you win!";
+  } else if (user === "rock" && computer === "paper") {
+    return "you lose!";
+  } else if (user === "paper" && computer === "scissors") {
+    return "you lose!";
+  } else if (user === "scissors" && computer === "rock") {
+    return "you lose!";
+  } else {
+    return "it's a tie";
   }
 }
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
-//Metric Converter 
-//Task 5a - KM to Miles 
+//Metric Converter
+//Task 5a - KM to Miles
 /*
 Using the miles function below do the following:
   1. Receive a number of kilometers
-  2. Convert the number of kiolmeters received to miles
+  2. Convert the number of kilometers received to miles
   3. Return the number of miles
 */
 
-function miles(kilometers){
+function miles(kilometers) {
   return kilometers * 0.621371;
 }
 
@@ -238,7 +216,7 @@ Using the feet function below do the following:
 function feet(cm) {
   return cm / 30.48;
 }
- 
+
 feet(100);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -251,10 +229,11 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
-  }
-
+function annoyingSong(number) {
+  return `${number} bottles of soda on the wall, ${number} bottles of soda, take one down pass it around ${
+    number - 1
+  } bottles of soda on the wall`;
+}
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -270,25 +249,20 @@ Using the grade function below do the following:
    60-69 should return 'you got a D'
    below should return 'you got an F'
 */
-  
-function grade(score){
-if (score >= 90) {
-  return "you got an A"
+
+function grade(score) {
+  if (score >= 90) {
+    return "you got an A";
+  } else if (score >= 80) {
+    return "you got a B";
+  } else if (score >= 70) {
+    return "you got a C";
+  } else if (score >= 60) {
+    return "you got a D";
+  } else {
+    return "you got an F";
+  }
 }
-else if (score >= 80) {
-  return "you got a B"
-}
-else if (score >= 70) {
-  return "you got a C"
-}
-else if (score >= 60) {
-  return "you got a D"
-}
-else {
-  return "you got an F"
-}
-}
-  
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
 
@@ -302,27 +276,24 @@ Using the vowelCounter function below do the following:
   HINT - try looking up the .includes() method
 */
 
-
 function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+  /*add your code here*/
 }
-
-
 
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-function foo(){
-    //console.log('its working');
-    return 'bar';
+function foo() {
+  //console.log('its working');
+  return "bar";
 }
 /*🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Don't touch the code after this line! 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑*/
-export default{
-    foo,
-    multiply,
-    dogYears,
-    hungryDog,
-    game,
-    miles,
-    feet,
-    annoyingSong,
-    grade
-}
+export default {
+  foo,
+  multiply,
+  dogYears,
+  hungryDog,
+  game,
+  miles,
+  feet,
+  annoyingSong,
+  grade,
+};
