@@ -279,7 +279,7 @@ let vowels = ["a", "e", "i", "o", "u"];
 
 function vowelCounter(word) {
   let vowelCounter = 0;
-  for (i = 0; i <= word.length; i++) {
+  for ( var i = 0; i <= word.length; i++) {
     let letter = word[i];
     if (vowels.includes(letter)) {
       vowelCounter++;
