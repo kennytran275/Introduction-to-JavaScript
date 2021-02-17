@@ -162,11 +162,55 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
+let user = Math.random();
+
+if (user <= 0.33) {
+  let user = "Rock";
+}
+else if (user >= 0.33 && user <= 0.66) {
+  let user = "Paper";
+}
+else {
+  let user = "Scissors";
+}
+
+let computer = Math.random();
+
+if (computer <= 0.33) {
+  let computer = "Rock";
+}
+else if (computer >= 0.33 && computer <= 0.66) {
+  let computer = "Paper";
+}
+else {
+  let computer = "Scissors";
+}
+
 function game(user, computer){
-    /*add your code here*/
+  if (user === "Rock" && computer === "Scissors") {
+    return "you win!"
+  }
+  else if (user === "Paper" && computer === "Rock") {
+    return "you win!"
+  }
+  else if (user === "Scissors" && computer === "Paper") {
+    return "you win!"
+  }
+  else if (user === "Rock" && computer === "Paper") {
+    return "you lose!"
+  }
+  else if (user === "Paper" && computer === "Scissors") {
+    return "you lose!"
+  }
+  else if (user === "Scissors" && computer === "Rock") {
+    return "you lose!"
+  }
+  else {
+    return "it's a tie"
+  }
 }
   
-
+game(user,computer);
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -194,7 +238,7 @@ Using the feet function below do the following:
 */
 
 function feet(cm) {
-  return cm * 0.032808;
+  return cm / 30.48;
 }
  
 feet(100);
